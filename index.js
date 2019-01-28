@@ -1,7 +1,5 @@
-const express = require('express')
 const axios = require('axios')
-const cors = require('cors')
-const app = express()
+const { parse } = require('url')
 
 const HTTPClient = axios.create({
   baseURL: 'https://api.redtube.com',
@@ -12,13 +10,9 @@ const HTTPClient = axios.create({
   }
 })
 
-app.use(cors())
-app.get('/', async (req, res) => {
-  const { query } = req
+module.exports = async (req, res) => {
+  const { query } = parse(req.url, true)
   const { data: redtubeResponse } = await HTTPClient.get('/', { params: query })
   console.log('* Redtube response', redtubeResponse)
-  res.json(redtubeResponse)
-})
-
-const PORT = process.env.PORT || 4000
-app.listen(PORT, () => console.log('Proxy running on', PORT))
+  res.end(JSON.stringify(redtubeResponse))
+}

@@ -3,7 +3,7 @@
   <p align="center">
     Proxy API for
     <a href="https://api.redtube.com/">RedTube API</a> /
-    <a href="https://api-redtube-proxy.mybluemix.net/">live demo</a>
+    <a href="https://api-redtube-proxy-bagqn9mix.now.sh/">live demo</a>
   </p>
 
   <p align="center">

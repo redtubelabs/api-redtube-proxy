@@ -3,9 +3,9 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@now/node": "^0.4.28",
     "axios": "^0.18.0",
-    "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "url": "^0.11.0"
   },
   "engines": {
     "node": "11.2.0"
